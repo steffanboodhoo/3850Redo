@@ -35,3 +35,13 @@
 	(bind ?value (ask-question "Is the cheese pasturized" ?allowed-values))
 	(assert (UP ?value))
 )
+
+(defrule variety-question
+	(variety-values $?allowed-values)
+	?x <- (UP ?val)
+  =>
+  	(retract ?x)
+	(bind ?value (ask-question "What variety of cheese is it " ?allowed-values))
+	(assert (VA ?value))
+)
+
