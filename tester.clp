@@ -618,12 +618,12 @@
 (deffacts valid-values
 (pasturized-values unknown yes no both)
 (vegetarian-values unknown yes no)
-(variety-values unknown fresh_firm medium_firm whey hard soft semi_hard semi_soft artisan soft_ripened brined processed smear_ripened blue_veined)
-(texture-values unknown compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
-(country-values unknown netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
+(variety-values unknown fresh-firm medium-firm whey hard soft semi-hard semi-soft artisan soft-ripened brined processed smear-ripened blue-veined)
+(texture-values unknown compact creamy stringy brittle flacky-hard crumbly elastic springy smooth chewy dense grainy supple  soft-ripened  open  smoothe flaky spreadable  firm chalky)
+(country-values unknown netherlands england great-britain france italy greece united-states india united-kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
 (aroma-values unknown pungent fresh strong nutty aromatic herbal milky floral rich pleasant sweet goaty stinky earthy fruity mild smokey)
-(flavor-values unknown creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
-(colour-values unknown yellow pale_yellow white straw cream golden_orange blue ivory)
+(flavor-values unknown creamy full-flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt-caramel grassy mushroomy smokey)
+(colour-values unknown yellow pale-yellow white straw cream golden-orange blue ivory)
 (milk-values unknown cow sheep goat reindeer waterbuffalo)
 )
 ;;--------------------------------------------------------------------------------------------------------
