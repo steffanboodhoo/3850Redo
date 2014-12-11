@@ -758,4 +758,4 @@
           (test (<= ?r ?accuracy)))
   =>
   (retract ?u)
-  (printout t ?name " with a certainty of " ?accuracy "." crlf))
+  (printout t ?name " with a certainty of " (*(/ ?accuracy 45) 100) "%." crlf))
