@@ -12,11 +12,11 @@
 ;;--------------------------------------------------------------------------------------------------------
 
 (deffunction MAIN::ask-question (?question ?allowed-values)
-   (printout t ?question)
+   (printout t crlf "allowed-values: "?allowed-values crlf ?question)
    (bind ?answer (read))
    (if (lexemep ?answer) then (bind ?answer (lowcase ?answer)))
    (while (not (member ?answer ?allowed-values)) do
-      (printout t ?question)
+      (printout t "invalid value entered" ?question)
       (bind ?answer (read))
       (if (lexemep ?answer) then (bind ?answer (lowcase ?answer))))
    ?answer)
