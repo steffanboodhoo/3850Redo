@@ -480,75 +480,75 @@
 	(UP ?userPass)
 	?f<-(cheese-data (name ?cheeseName)(pasturized $?cheesePas)(pasturized-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userPass"   "$?cheesePas crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userPass"   "$?cheesePas crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userPass $?cheesePas)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(pasturized-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 ;; MS milk source --------------------------------------------------------------------------
 (defrule cheese-milk-source
 	(MS ?userMilk)
 	?f<-(cheese-data (name ?cheeseName)(milk-source $?cheeseMilk)(milk-source-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userMilk"   "$?cheeseMilk crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userMilk"   "$?cheeseMilk crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userMilk $?cheeseMilk)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(milk-source-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 ;; TX texture --------------------------------------------------------------------------
 (defrule cheese-texture
 	(TX ?userTexture)
 	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseTexture)(texture-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userTexture"   "$?cheeseTexture crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userTexture"   "$?cheeseTexture crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userTexture $?cheeseTexture)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(texture-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 ;; VA variety --------------------------------------------------------------------------
 (defrule cheese-variety
 	(VA ?userVariety)
 	?f<-(cheese-data (name ?cheeseName)(variety $?cheeseVariety)(variety-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userVariety"   "$?cheeseVariety crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userVariety"   "$?cheeseVariety crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userVariety $?cheeseVariety)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(variety-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 ;; CR color --------------------------------------------------------------------------
 (defrule cheese-colour
 	(CR ?userColour)
 	?f<-(cheese-data (name ?cheeseName)(colour $?cheeseColour)(colour-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userColour"   "$?cheeseColour crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userColour"   "$?cheeseColour crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userColour $?cheeseColour)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(colour-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 
 
@@ -557,15 +557,15 @@
 	(FL ?userFlavor)
 	?f<-(cheese-data (name ?cheeseName)(flavor $?cheeseFlavor)(flavor-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userFlavor"   "$?cheeseFlavor crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userFlavor"   "$?cheeseFlavor crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userFlavor $?cheeseFlavor)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(flavor-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 
 ;; AR aroma --------------------------------------------------------------------------
@@ -573,15 +573,15 @@
 	(AR ?userAroma)
 	?f<-(cheese-data (name ?cheeseName)(aroma $?cheeseAroma)(aroma-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userAroma"   "$?cheeseAroma crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userAroma"   "$?cheeseAroma crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userAroma $?cheeseAroma)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(aroma-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 
 ;; CTY country --------------------------------------------------------------------------
@@ -589,30 +589,30 @@
 	(CTY ?userCountry)
 	?f<-(cheese-data (name ?cheeseName)(country $?cheeseCountry)(country-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userCountry"   "$?cheeseCountry crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userCountry"   "$?cheeseCountry crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userCountry $?cheeseCountry)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(country-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 ;; VEG vegetarian --------------------------------------------------------------------------
 (defrule cheese-vegetarian
 	(VEG ?userVegetarian)
 	?f<-(cheese-data (name ?cheeseName)(vegetarian $?cheeseVegetarian)(vegetarian-check no)(accuracy ?Acc))
 =>	
-	(printout t ?cheeseName crlf)
-	(printout t ?userVegetarian"   "$?cheeseVegetarian crlf)
-	(printout t "old value"?Acc )
+	;(printout t ?cheeseName crlf)
+	;(printout t ?userVegetarian"   "$?cheeseVegetarian crlf)
+	;(printout t "old value"?Acc )
 	(if    (member ?userVegetarian $?cheeseVegetarian)
 	 then 
 		 (bind ?Acc (+ 5 ?Acc))
 		 (modify  ?f (accuracy ?Acc)(vegetarian-check yes))
 	 )
-	(printout t "         new value"?Acc crlf)
+	;(printout t "         new value"?Acc crlf)
 )
 
 (deffacts valid-values
@@ -643,7 +643,8 @@
 	?x <- (initial-fact)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "Is the cheese pasturized" ?allowed-values))
+  	(printout t "Please anser the following questions to the best of your ability." crlf "If an invalded answer is given, the question will be asked again. If you are unsure of an answer, you can enter ''unknown''" crlf)
+	(bind ?value (ask-question "Is the cheese pasturized? " ?allowed-values))
 	(assert (UP ?value))
 )
 
@@ -652,7 +653,7 @@
 	?x <- (UP ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "Of what variety is the cheese " ?allowed-values))
+	(bind ?value (ask-question "Of what variety is the cheese? " ?allowed-values))
 	(assert (VA ?value))
 )
 
@@ -661,7 +662,7 @@
 	?x <- (VA ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What is the texture of the cheese " ?allowed-values))
+	(bind ?value (ask-question "What is the texture of the cheese? " ?allowed-values))
 	(assert (TX ?value))
 )
 
@@ -670,7 +671,7 @@
 	?x <- (TX ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What country was the cheese made in " ?allowed-values))
+	(bind ?value (ask-question "What country was the cheese made in? " ?allowed-values))
 	(assert (CTY ?value))
 )
 
@@ -679,7 +680,7 @@
 	?x <- (CTY ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "How does the cheese smell " ?allowed-values))
+	(bind ?value (ask-question "How does the cheese smell? " ?allowed-values))
 	(assert (AR ?value))
 )
 
@@ -688,7 +689,7 @@
 	?x <- (AR ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "How does the cheese taste " ?allowed-values))
+	(bind ?value (ask-question "How does the cheese taste? " ?allowed-values))
 	(assert (FL ?value))
 )
 
@@ -696,8 +697,10 @@
 	(colour-values $?allowed-values)
 	?x <- (FL ?val)
   =>
+
+
   	(retract ?x)
-	(bind ?value (ask-question "What colour is your cheese " ?allowed-values))
+	(bind ?value (ask-question "What colour is your cheese? " ?allowed-values))
 	(assert (CR ?value))
 )
 
@@ -706,7 +709,7 @@
 	?x <- (CR ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "Is your cheese vegetarian " ?allowed-values))
+	(bind ?value (ask-question "Is your cheese vegetarian? " ?allowed-values))
 	(assert (VEG ?value))
 )
 
@@ -715,9 +718,11 @@
 	?x <- (VEG ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What animal did the cheese's milk come from " ?allowed-values))
+	(bind ?value (ask-question "What animal did the cheese's milk come from? " ?allowed-values))
 	(assert (MS ?value))
-	(assert (top-match "name" 0))
+	;(assert (top-match "name" 0))
+	(printout t  crlf  crlf "The following is the cheese list sorted in descending order of certainty:" crlf)
+	(assert (print-sorted))
 )
 
 (defrule top-match
@@ -732,3 +737,25 @@
 	)	
 	(printout t "change to "?cheeseName )
 )
+
+(defrule assert-unprinted "Asserts each item that needs to be printed."
+  (print-sorted)
+  (cheese-data (name ?n))
+  =>
+  (assert (unprinted ?n)))
+
+(defrule retract-print-sorted "Retract print-sorted after all items enumerated."
+  (declare (salience -10))
+  ?f <- (print-sorted)
+  =>
+  (retract ?f))
+
+(defrule print-greatest "Prints the unprinted item with the greatest accuracy."
+  (not (print-sorted))
+  ?u <- (unprinted ?name)
+  (cheese-data (name ?name) (accuracy ?accuracy))
+  (forall (and (unprinted ?n) (cheese-data (name ?n) (accuracy ?r)))
+          (test (<= ?r ?accuracy)))
+  =>
+  (retract ?u)
+  (printout t ?name " with a certainty of " ?accuracy "." crlf))
