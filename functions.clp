@@ -1,5 +1,6 @@
 (deffacts valid-values
 (pasturized-values unknown yes no both)
+(vegetarian-values unknown yes no)
 (variety-values unknown fresh_firm medium_firm whey hard soft semi_hard semi_soft artisan soft_ripened brined processed smear_ripened blue_veined)
 (texture-values unknown compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
 (country-values unknown netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
@@ -83,9 +84,18 @@
 	(assert (CR ?value))
 )
 
+(defrule vegetarian-question
+	(vegetarian-values $?allowed-values)
+	?x <- (CR ?val)
+  =>
+  	(retract ?x)
+	(bind ?value (ask-question "Is your cheese vegetarian " ?allowed-values))
+	(assert (VEG ?value))
+)
+
 (defrule milk-question
 	(milk-values $?allowed-values)
-	?x <- (CR ?val)
+	?x <- (VEG ?val)
   =>
   	(retract ?x)
 	(bind ?value (ask-question "What animal did the cheese's milk come from " ?allowed-values))
@@ -94,16 +104,16 @@
 )
 
 (defrule top-match
-	(cheese-data (name ?cheeseName)(milk-source $?cheeseMilk)(milk-source-check no)(accuracy ?Acc))
+	(MS ?val)
+	(cheese-data (name ?cheeseName)(accuracy ?Acc))
 	?f <- (top-match ?name ?accuracy)
-	?x <- (MS ?val)
   =>
-  	(retract ?x)
 	(if
 		(> ?Acc ?accuracy)
 	 then
 	 	(modify ?f (top-match ?cheeseName ?Acc))
 	)	
+	(printout t "change to "?cheeseName )
 )
 
 
