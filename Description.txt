@@ -1,0 +1,49 @@
+
+The classification is based off the data gathered from Cheese.com .
+It evaluates what cheese the user is trying to get based of off 9 different attributes
+Each cheese may posess different attributes OR may be missing attributes,
+the system accounts for this by awarding each cheese an accuracy value based off of their attributes and what the user enters.
+A cheese in the real world may have one of many values for a particular value
+For example
+Cheese A can be either pasturized or un pasturized 
+So cheese A's values for pasturized in the system will be: yes, no
+so if a user enters a value for pasturized once it is included in the cheese's values it will be awarded.
+
+Another example
+Cheese B can be made in Italy, France or Germany
+Once a user enters one of these values Cheese B will be awarded accuracy values
+
+Missing data
+The system allows a user to enter 'unknown' for an attribute they do not know
+in which case no cheese would be awarded any accuracy values
+E.G. 
+You dont know if the cheese is Pasturizeed or not you can enter unknown
+
+Attributes:
+
+Pasturized - Is the cheese pasturized or not
+(pasturized-values unknown yes no both)
+
+Vegetarian - Is the cheese vegetarian
+(vegetarian-values unknown yes no)
+
+Variety - What variety of cheese it is
+(variety-values unknown fresh_firm medium_firm whey hard soft semi_hard semi_soft artisan soft_ripened brined processed smear_ripened blue_veined)
+
+Texture - what kind of texture does the cheese have
+(texture-values unknown compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
+
+Country - what country is your cheese from
+(country-values unknown netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
+
+Aroma - what kind of aroma does your cheese have
+(aroma-values unknown pungent fresh strong nutty aromatic herbal milky floral rich pleasant sweet goaty stinky earthy fruity mild smokey)
+
+Flavor - how does your cheese taste
+(flavor-values unknown creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
+
+Colour - what is the colour of your cheese
+(colour-values unknown yellow pale_yellow white straw cream golden_orange blue ivory)
+
+Milk Source - what animal did your milk come from
+(milk-values unknown cow sheep goat reindeer waterbuffalo)
