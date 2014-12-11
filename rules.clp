@@ -47,7 +47,7 @@
 ;; VA variety --------------------------------------------------------------------------
 (defrule cheese-variety
 	(VA ?userVariety)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseVariety)(variety-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(variety $?cheeseVariety)(variety-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userVariety"   "$?cheeseVariety crlf)
@@ -62,7 +62,7 @@
 ;; CR color --------------------------------------------------------------------------
 (defrule cheese-colour
 	(CR ?userColour)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseColour)(colour-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(colour $?cheeseColour)(colour-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userColour"   "$?cheeseColour crlf)
@@ -79,7 +79,7 @@
 ;; FL flavor --------------------------------------------------------------------------
 (defrule cheese-flavor
 	(FL ?userFlavor)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseFlavor)(flavor-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(flavor $?cheeseFlavor)(flavor-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userFlavor"   "$?cheeseFlavor crlf)
@@ -95,7 +95,7 @@
 ;; AR aroma --------------------------------------------------------------------------
 (defrule cheese-aroma
 	(AR ?userAroma)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseAroma)(flavor-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(aroma $?cheeseAroma)(flavor-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userAroma"   "$?cheeseAroma crlf)
@@ -111,7 +111,7 @@
 ;; CTY country --------------------------------------------------------------------------
 (defrule cheese-country
 	(CTY ?userCountry)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseCountry)(country-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(country $?cheeseCountry)(country-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userCountry"   "$?cheeseCountry crlf)
@@ -126,7 +126,7 @@
 ;; VEG vegetarian --------------------------------------------------------------------------
 (defrule cheese-vegetarian
 	(VEG ?userVegetarian)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseVegetarian)(vegetarian-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(vegetarian $?cheeseVegetarian)(vegetarian-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userVegetarian"   "$?cheeseVegetarian crlf)
