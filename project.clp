@@ -466,11 +466,11 @@
 
 (deffacts valid-values
 	(pasturized-values yes no both)
-	(variety-values fresh_firm medium_firm whey hard soft semi_hard semi_soft artisan soft_ripened brined processed smear_ripened blue_veined)
-	(texture-values compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
-	(country-values netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
+	(variety-values fresh-firm medium-firm whey hard soft semi-hard semi-soft artisan soft-ripened brined processed smear-ripened blue-veined)
+	(texture-values compact creamy stringy brittle flacky-hard crumbly elastic springy smooth chewy dense grainy supple  soft-ripened  open  smoothe flaky spreadable  firm chalky)
+	(country-values netherlands england great-britain france italy greece united-states india united-kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
 	(smell-values pungent fresh strong nutty aromatic herbal milky floral rich pleasant sweet goaty stinky earthy fruity mild smokey)
-	(taste-values creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
-	(colour-values yellow pale_yellow white straw cream golden_orange blue ivory)
+	(taste-values creamy full-flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt-caramel grassy mushroomy smokey)
+	(colour-values yellow pale-yellow white straw cream golden-orange blue ivory)
 	(animal-values cow sheep goat reindeer waterbuffalo)
 )

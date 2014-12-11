@@ -95,7 +95,7 @@
 ;; AR aroma --------------------------------------------------------------------------
 (defrule cheese-aroma
 	(AR ?userAroma)
-	?f<-(cheese-data (name ?cheeseName)(aroma $?cheeseAroma)(flavor-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(aroma $?cheeseAroma)(aroma-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userAroma"   "$?cheeseAroma crlf)
@@ -138,3 +138,4 @@
 	 )
 	(printout t "         new value"?Acc crlf)
 )
+

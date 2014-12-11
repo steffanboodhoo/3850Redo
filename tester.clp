@@ -466,15 +466,14 @@
 
 (deffacts valid-values
 	(pasturized-values yes no both)
-	(variety-values fresh_firm medium_firm whey hard soft semi_hard semi_soft artisan soft_ripened brined processed smear_ripened blue_veined)
-	(texture-values compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
-	(country-values netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
+	(variety-values fresh-firm medium-firm whey hard soft semi-hard semi-soft artisan soft-ripened brined processed smear-ripened blue-veined)
+	(texture-values compact creamy stringy brittle flacky-hard crumbly elastic springy smooth chewy dense grainy supple  soft-ripened  open  smoothe flaky spreadable  firm chalky)
+	(country-values netherlands england great-britain france italy greece united-states india united-kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
 	(smell-values pungent fresh strong nutty aromatic herbal milky floral rich pleasant sweet goaty stinky earthy fruity mild smokey)
-	(taste-values creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
-	(colour-values yellow pale_yellow white straw cream golden_orange blue ivory)
+	(taste-values creamy full-flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt-caramel grassy mushroomy smokey)
+	(colour-values yellow pale-yellow white straw cream golden-orange blue ivory)
 	(animal-values cow sheep goat reindeer waterbuffalo)
 )
-
 
 ;;UP pasturized ----------------------------------------------------------------------------
 (defrule cheese-pasturized
@@ -572,7 +571,7 @@
 ;; AR aroma --------------------------------------------------------------------------
 (defrule cheese-aroma
 	(AR ?userAroma)
-	?f<-(cheese-data (name ?cheeseName)(texture $?cheeseAroma)(flavor-check no)(accuracy ?Acc))
+	?f<-(cheese-data (name ?cheeseName)(aroma $?cheeseAroma)(aroma-check no)(accuracy ?Acc))
 =>	
 	(printout t ?cheeseName crlf)
 	(printout t ?userAroma"   "$?cheeseAroma crlf)
@@ -622,9 +621,9 @@
 (texture-values unknown compact creamy stringy brittle flacky_hard crumbly elastic springy smooth chewy dense grainy supple  soft_ripened  open  smoothe flaky spreadable  firm chalky)
 (country-values unknown netherlands england great_britain france italy greece united_states india united_kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
 (aroma-values unknown pungent fresh strong nutty aromatic herbal milky floral rich pleasant sweet goaty stinky earthy fruity mild smokey)
-(taste-values unknown creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
+(flavor-values unknown creamy full_flavoured nutty sweet sharp mild fruity savoury milky salty tangy buttery herbaceous spicy smoothe acidic strong burnt_caramel grassy mushroomy smokey)
 (colour-values unknown yellow pale_yellow white straw cream golden_orange blue ivory)
-(animal-values unknown cow sheep goat reindeer waterbuffalo)
+(milk-values unknown cow sheep goat reindeer waterbuffalo)
 )
 ;;--------------------------------------------------------------------------------------------------------
 
@@ -652,7 +651,7 @@
 	?x <- (UP ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What variety of cheese is it " ?allowed-values))
+	(bind ?value (ask-question "Of what variety is the cheese " ?allowed-values))
 	(assert (VA ?value))
 )
 
@@ -661,7 +660,7 @@
 	?x <- (VA ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What texture does the cheese have " ?allowed-values))
+	(bind ?value (ask-question "What is the texture of the cheese " ?allowed-values))
 	(assert (TX ?value))
 )
 
@@ -679,8 +678,49 @@
 	?x <- (CTY ?val)
   =>
   	(retract ?x)
-	(bind ?value (ask-question "What aroma does the cheese have " ?allowed-values))
+	(bind ?value (ask-question "How does the cheese smell " ?allowed-values))
 	(assert (AR ?value))
+)
+
+(defrule flavor-question
+	(flavor-values $?allowed-values)
+	?x <- (AR ?val)
+  =>
+  	(retract ?x)
+	(bind ?value (ask-question "How does the cheese taste " ?allowed-values))
+	(assert (FL ?value))
+)
+
+(defrule colour-question
+	(colour-values $?allowed-values)
+	?x <- (FL ?val)
+  =>
+  	(retract ?x)
+	(bind ?value (ask-question "What colour is your cheese " ?allowed-values))
+	(assert (CR ?value))
+)
+
+(defrule milk-question
+	(milk-values $?allowed-values)
+	?x <- (CR ?val)
+  =>
+  	(retract ?x)
+	(bind ?value (ask-question "What animal did the cheese's milk come from " ?allowed-values))
+	(assert (MS ?value))
+	(assert (top-match "name" 0))
+)
+
+(defrule top-match
+	(cheese-data (name ?cheeseName)(milk-source $?cheeseMilk)(milk-source-check no)(accuracy ?Acc))
+	?f <- (top-match ?name ?accuracy)
+	?x <- (MS ?val)
+  =>
+  	(retract ?x)
+	(if
+		(> ?Acc ?accuracy)
+	 then
+	 	(modify ?f (top-match ?cheeseName ?Acc))
+	)	
 )
 
 
