@@ -22,7 +22,7 @@ You dont know if the cheese is Pasturizeed or not you can enter unknown
 Attributes:
 
 Pasturized - Is the cheese pasturized or not
-(pasturized-values unknown yes no both)
+(pasturized-values unknown yes no)
 
 Vegetarian - Is the cheese vegetarian
 (vegetarian-values unknown yes no)

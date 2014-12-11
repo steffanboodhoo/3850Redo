@@ -465,7 +465,7 @@
 )
 
 (deffacts valid-values
-	(pasturized-values yes no both)
+	(pasturized-values yes no)
 	(variety-values fresh-firm medium-firm whey hard soft semi-hard semi-soft artisan soft-ripened brined processed smear-ripened blue-veined)
 	(texture-values compact creamy stringy brittle flacky-hard crumbly elastic springy smooth chewy dense grainy supple  soft-ripened  open  smoothe flaky spreadable  firm chalky)
 	(country-values netherlands england great-britain france italy greece united-states india united-kingdom ireland finland catalonia mexico norway germany belgium sweden canada)
@@ -616,7 +616,7 @@
 )
 
 (deffacts valid-values
-(pasturized-values unknown yes no both)
+(pasturized-values unknown yes no)
 (vegetarian-values unknown yes no)
 (variety-values unknown fresh-firm medium-firm whey hard soft semi-hard semi-soft artisan soft-ripened brined processed smear-ripened blue-veined)
 (texture-values unknown compact creamy stringy brittle flacky-hard crumbly elastic springy smooth chewy dense grainy supple  soft-ripened  open  smoothe flaky spreadable  firm chalky)
